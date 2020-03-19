@@ -1,2 +1,5 @@
 1. yml 配置不生效
-2.
+  A:  检查 名称是否 application.yml,检查 编码是否正确
+2. 在IDEA启动多个Spring Boot工程实例
+3. java.lang.NoSuchMethodError: org.springframework.boot.builder.SpringApplicationBuilder.
+   A: 检查 spring boot 和 spring cloud 的版本是否匹配

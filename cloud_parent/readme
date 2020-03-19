@@ -2,10 +2,20 @@ https://blog.csdn.net/qq_31748587/article/details/86008741
 如何搭建 多模块的项目
 
 https://blog.csdn.net/forezp/article/details/70148833
-spring cloud 详细介绍
+spring cloud 详细介绍,注意这是 2.0 Dalston.RC1 版本的
+
 
 https://github.com/github/gitignore
 git忽略的配置
 
+1. Eureka_server  服务注册和发现模块 cloud discovery->eureka server
+spring-cloud-starter-netflix-eureka-server
 http://localhost:8761/
+2. Eureka_client  作为Eureka Client 测试  Eureka_server，cloud discovery->eureka server
+       跟Eureka_server 配置和注解不一样
+spring-cloud-starter-netflix-eureka-client、spring-boot-starter-web
 http://localhost:8762/hi?name=mark
+(可以复制一个启动为8763，来测试负载平衡）
+3. service_ribbon 服务消费者 spring-boot工程, web->Spring Web
+spring-cloud-starter-netflix-ribbon、spring-cloud-starter-netflix-eureka-client
+http://localhost:8764/hi?name=forezp

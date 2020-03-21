@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mark.user.biz.dao.BizUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.mark.user.biz.bean.BizUser" >
+        <result column="user_id" property="userId" />
+        <result column="user_name" property="userName" />
+        <result column="user_email" property="userEmail" />
+        <result column="user_type" property="userType" />
+        <result column="user_disabled" property="userDisabled" />
+        <result column="user_last_login_date" property="userLastLoginDate" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,
+        user_name,
+        user_email,
+        user_type,
+        user_disabled,
+        user_last_login_date
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="user_id" keyProperty="userId" parameterType="com.mark.user.biz.bean.BizUser">
+        INSERT INTO biz_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test ='null != userName'>
+                user_name,
+            </if>
+            <if test ='null != userEmail'>
+                user_email,
+            </if>
+            <if test ='null != userType'>
+                user_type,
+            </if>
+            <if test ='null != userDisabled'>
+                user_disabled,
+            </if>
+            <if test ='null != userLastLoginDate'>
+                user_last_login_date
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test ='null != userName'>
+                #{userName},
+            </if>
+            <if test ='null != userEmail'>
+                #{userEmail},
+            </if>
+            <if test ='null != userType'>
+                #{userType},
+            </if>
+            <if test ='null != userDisabled'>
+                #{userDisabled},
+            </if>
+            <if test ='null != userLastLoginDate'>
+                #{userLastLoginDate}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM biz_user
+        WHERE user_id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.mark.user.biz.bean.BizUser">
+        UPDATE biz_user
+        <set>
+            <if test ='null != userName'>user_name = #{userName},</if>
+            <if test ='null != userEmail'>user_email = #{userEmail},</if>
+            <if test ='null != userType'>user_type = #{userType},</if>
+            <if test ='null != userDisabled'>user_disabled = #{userDisabled},</if>
+            <if test ='null != userLastLoginDate'>user_last_login_date = #{userLastLoginDate}</if>
+        </set>
+        WHERE user_id = #{userId}
+    </update>
+
+
+    <select id="load" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM biz_user
+        WHERE user_id = #{id}
+    </select>
+
+    <select id="pageList" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM biz_user
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="pageListCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM biz_user
+    </select>
+
+</mapper>

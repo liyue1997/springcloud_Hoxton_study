@@ -2,8 +2,13 @@ https://blog.csdn.net/qq_31748587/article/details/86008741
 如何搭建 多模块的项目
 
 https://blog.csdn.net/forezp/article/details/70148833
-spring cloud 详细介绍,注意这是 2.0 Dalston.RC1 版本的
+spring cloud 详细介绍,注意这是 2.0 Dalston.RC1 版本的，且不全是Netflix
 
+https://juejin.im/post/5d898a366fb9a06b0c08a6df
+Spring Cloud Netflix
+
+https://www.cnblogs.com/yichunguo/p/12164679.html
+mybatis mysql 5.7
 
 https://github.com/github/gitignore
 git忽略的配置
@@ -16,6 +21,24 @@ http://localhost:8761/
 spring-cloud-starter-netflix-eureka-client、spring-boot-starter-web
 http://localhost:8762/hi?name=mark
 (可以复制一个启动为8763，来测试负载平衡）
+spring-boot-starter-actuator
+可以提供服务信息，
+http://localhost:8762/actuator/health   健康信息
+http://localhost:8762/actuator/info     基础信息
+
 3. service_ribbon 服务消费者 spring-boot工程, web->Spring Web
+http://localhost:8764/hi?name=forezp aWSE4R5T6Y7U8IO0-Q +
+
+使用ribbon 做负载平衡
 spring-cloud-starter-netflix-ribbon、spring-cloud-starter-netflix-eureka-client
-http://localhost:8764/hi?name=forezp
+使用hystrix做断路器
+spring-cloud-starter-netflix-hystrix
+
+4. Eureka_zuul 路由
+http://localhost:8400/client/hi?name=mark1
+http://localhost:8400/ribbon/hi?name=mark2
+路由管理
+spring-cloud-starter-netflix-zuul
+
+
+4. Server-mybatis curd服务 mybatis mysql 5.7

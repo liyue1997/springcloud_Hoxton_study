@@ -17,7 +17,9 @@ public class EurekaClientApplication {
 	String port;
 
 	@RequestMapping("/hi")
-	public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
+	public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) throws Exception {
+		if (name.equals("mark"))
+			throw new Exception("测试熔断");
 		return "hi " + name + " ,i am from port:" + port;
 	}
 

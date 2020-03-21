@@ -1,0 +1,22 @@
+server:
+  port: 8801
+
+spring:
+  application:
+    name: service-mybatis
+  datasource:
+    url: jdbc:mysql://localhost:3306/study?useSSL=false&serverTimezone=GMT
+    username: root
+    password: x5
+
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+

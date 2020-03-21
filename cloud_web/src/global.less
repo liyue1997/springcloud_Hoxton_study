@@ -1,0 +1,98 @@
+@import '~antd/es/style/themes/default.less';
+
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+// .ant-pro-global-footer-links{
+//   display: none;
+// }
+
+.ant-pro-global-footer :global{
+  margin: 8px 0 8px 0 !important; 
+}
+// .antd-pro-pages-rs-user-oper-index-infoTable .ant-table-tbody > tr > td :global{
+//   padding-left: 3px !important; 
+//   padding-right: 3px !important; 
+// }
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// 兼容IE11
+@media screen and(-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body .ant-design-pro > .ant-layout {
+    min-height: 100vh;
+  }
+}
+
+
+
+//================ 项目中配置==========================================================
+
+//让查询表格 跟 结果展现表格 中间间隔，例：RsUserOper
+.cardSearch :global{
+  margin-bottom: 24px !important;
+}
+.actioncolumn:global{
+  width: 180px;
+}
+@media (max-width: @screen-xs) {
+  .cardSearch :global{
+    margin-bottom: 12px !important;
+  }
+  .ant-card-body{
+    padding:10px !important;
+  }
+  .ant-pro-basicLayout-content{
+    margin: 12px !important;
+  }
+  .querybtn,.newbtn,.exportbtn,.importbtn,.updownbtn,.createtreebtn{
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+  .actioncolumn:global{
+    width: 60px;
+  }
+}

@@ -1,0 +1,71 @@
+@import '~antd/es/style/themes/default.less';
+:global{
+  // .layoutbox{
+  //   padding: 24px;
+  //   background: #FFF;
+  //   width: 100% !important;
+  // }
+  .mainTreediv{
+    width: 100% !important;
+    background: #FFF;
+  }
+  .sideTree {
+    position: relative;
+    float: left;
+    background: #FFF;
+    width: 48% !important;
+    max-width: none !important;
+    min-width:none !important;
+    flex: 0 0 50% !important;
+  }
+  .contentinfo{
+    position: relative;
+    float: left;
+    width: 48% !important;
+  }
+  .test{
+    padding: 6px 15px;
+    cursor:pointer;
+    color: #373a3c;
+  }
+  .react-contextmenu{
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+  }
+.react-contextmenu-item.react-contextmenu-item--active,
+.react-contextmenu-item.react-contextmenu-item--selected{
+    color: #fff !important;
+    background-color: #20a0ff !important;
+    border-color: #20a0ff !important;
+    text-decoration: none !important;
+  }
+  .TsMenuModulebtn{
+    display: none;
+  }
+ 
+@media (max-width: @screen-xs) {
+  // .mainTreediv{
+  //   width: 100% !important;
+  //   background: #FFF !important;
+  // }
+  .sideTree {
+    position: relative;
+    float: left;
+    width: 98% !important;
+    background: #FFF;
+    max-width: none !important;
+    min-width:none !important;
+    flex: 0 0 50% !important;
+  }
+  .contentinfo{
+    background: #FFF;
+    position: relative;
+    float: left;
+    width: 98% !important;
+  }
+  .ant-form-item{
+    margin-bottom: 0px;
+    margin-top: 12px;
+  }
+}
+} 

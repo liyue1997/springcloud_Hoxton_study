@@ -29,6 +29,12 @@ zuul:
     service-hi:
       path: /clients/*
       serviceId: service-hi
+    b6premission:
+      path: /b6premission/*
+      serviceId: b6premission
+    service-mybatis:
+      path: /mybatis/*
+      serviceId: service-mybatis
   host:
       maxTotalConnections: 10000
       maxPerRouteConnections: 10000

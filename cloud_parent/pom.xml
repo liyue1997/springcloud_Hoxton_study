@@ -21,6 +21,7 @@
         <module>eureka_client</module>
         <module>service_ribbon</module>
         <module>server-mybatis</module>
+        <module>b6premission-server</module>
         <!--<module>eureka_feign</module>-->
     </modules>
 

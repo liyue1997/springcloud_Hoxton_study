@@ -5,6 +5,7 @@ import slash from 'slash2';
 import themePluginConfig from './themePluginConfig';
 import { getRoutes } from './routes/commonroute';
 import { getPremissionRoutes } from './routes/premission';
+import { getBizRoutes } from './routes/biz';
 const { pwa } = defaultSettings; // preview.pro.ant.design only do not use in your production ;
 // preview.pro.ant.design 专用环境变量，请不要在你的项目中使用它。
 
@@ -16,11 +17,22 @@ const const_webprename = '/b6premission/';
 const const_proxy = {
   '/b6premission/': {
     // target: 'http://127.0.0.1:16001/',
-    target: 'http://192.168.0.250:16001/',
+    // target: 'http://192.168.0.250:16001/',
     //target: 'http://39.105.135.192:16001/',
+    target: 'http://127.0.0.1:16001/',
     changeOrigin: true,
     pathRewrite: {
       '^/b6premission': '',
+    },
+  },
+  '/mybatis/': {
+    // target: 'http://127.0.0.1:16001/',
+    // target: 'http://192.168.0.250:16001/',
+    //target: 'http://39.105.135.192:16001/',
+    target: 'http://127.0.0.1:8801/',
+    changeOrigin: true,
+    pathRewrite: {
+      '^/mybatis': '',
     },
   },
 }; // const projectroutes=getRoutes();
@@ -125,6 +137,7 @@ export default {
            
             ...getRoutes(),
             ...getPremissionRoutes(),
+            ...getBizRoutes(),
             
           ],
         },

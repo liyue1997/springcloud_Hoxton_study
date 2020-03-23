@@ -1,21 +1,7 @@
-https://blog.csdn.net/qq_31748587/article/details/86008741
-如何搭建 多模块的项目
-
-https://blog.csdn.net/forezp/article/details/70148833
-spring cloud 详细介绍,注意这是 2.0 Dalston.RC1 版本的，且不全是Netflix
-
-https://juejin.im/post/5d898a366fb9a06b0c08a6df
-Spring Cloud Netflix
-
-https://www.cnblogs.com/yichunguo/p/12164679.html
-mybatis mysql 5.7
-
-https://github.com/github/gitignore
-git忽略的配置
-
 1. Eureka_server  服务注册和发现模块 cloud discovery->eureka server
 spring-cloud-starter-netflix-eureka-server
 http://localhost:8761/
+
 2. Eureka_client  作为Eureka Client 测试  Eureka_server，cloud discovery->eureka server
        跟Eureka_server 配置和注解不一样
 spring-cloud-starter-netflix-eureka-client、spring-boot-starter-web
@@ -41,4 +27,9 @@ http://localhost:8400/ribbon/hi?name=mark2
 spring-cloud-starter-netflix-zuul
 
 
-4. Server-mybatis curd服务 mybatis mysql 5.7
+5. Server-mybatis curd服务 mybatis mysql 5.7
+mysql-connector-java、mybatis-spring-boot-starter
+http://localhost:8801/swagger-ui.html
+http://localhost:8801/api/biz-users?offset=0&pagesize=10
+
+6. b6premission-server 是老系统的权限服务

@@ -36,3 +36,4 @@ buildNumber.properties
 *.log
 
 /eurekaclient8763/
+/log/
